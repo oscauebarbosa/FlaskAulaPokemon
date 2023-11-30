@@ -10,21 +10,23 @@
 <body>
  <div>
         <h1>{{ Titulo }}</h1>
-    </div>
+ </div>
 
-    {% for Pokemons in ListaPokemons %}
+ {% for Pokemons in ListaPokemons %}
 
-    <div class="pokemon-card">
-        <h2>Nome: {{ Pokemons.nome }}</h2>
-        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/{{Pokemons.numero}}.png">        <p>Tipo: {{ Pokemons.tipo }}</p>
-        <p>Altura: {{ Pokemons.altura }} cm</p>
-        <p>Peso: {{ Pokemons.peso }} kg</p>
-        <br>
+     <div class="pokemon-card">
+         <h2>Nome: {{ Pokemons.nome }}</h2>
+         <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/{{Pokemons.numero}}.png">
+         <p>Tipo: {{ Pokemons.tipo }}</p>
+         <p>Altura: {{ Pokemons.altura }} cm</p>
+         <p>Peso: {{ Pokemons.peso }} kg</p>
+         <br>
 
+         <a class="btnexcluir" href="excluir/{{ Pokemons.numero }}" >Excluir</a>
+         <a class="btneditar" href="editar/{{ Pokemons.numero }}" >Editar</a>
+     </div>
 
-    </div>
-
-    {% endfor %}
+ {% endfor %}
 
 </body>
 </html>

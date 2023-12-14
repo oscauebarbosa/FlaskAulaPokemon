@@ -7,6 +7,15 @@
     <link rel="stylesheet" href="../static/estilo.css">
 </head>
 <body>
+ {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                <ul id="messages" class="list-unstyled">
+                {% for message in messages %}
+                    <li class="alert alert-success">{{ message }}</li>
+                {% endfor %}
+                </ul>
+            {% endif %}
+ {% endwith %}
       <div class="pokemon-card">
           <div class="page-header">
               <h1>{{ Titulo }}</h1>
@@ -33,6 +42,7 @@
             <label for="peso">Peso</label>
             <input type="text" id="peso" name="peso" class="form-control"value = {{ pokemon.peso}}>
           </div>
+
           <button type="submit" class="btn btn-primary btn-salvar">Salvar</button>
         </fieldset>
       </form>
